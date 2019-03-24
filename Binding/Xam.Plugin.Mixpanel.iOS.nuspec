@@ -3,7 +3,7 @@
     <metadata>
         <id>Xam.Plugin.Mixpanel.iOS</id>
         <version>1.0.1</version>
-        <description>Mixpanel bindings for Xamarin.iOS</description>
+        <description>Xamarin.iOS bindings for Mixpanel (Objective-C).</description>
         <authors>FourPi</authors>
         <requireLicenseAcceptance>false</requireLicenseAcceptance>
         <!--<license type="file">LICENSE</license>-->
