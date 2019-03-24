@@ -1,0 +1,6 @@
+.mfractor
+.vs/
+bin/
+obj/
+Cartfile.resolved
+Binding/Mixpanel.framework
