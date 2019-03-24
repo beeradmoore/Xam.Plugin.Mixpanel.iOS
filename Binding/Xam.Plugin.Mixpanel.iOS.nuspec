@@ -1,14 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
     <metadata>
-        <!-- Required elements-->
         <id>Xam.Plugin.Mixpanel.iOS</id>
-        <version>1.0.0</version>
+        <version>1.0.1</version>
         <description>Mixpanel bindings for Xamarin.iOS</description>
         <authors>FourPi</authors>
         <requireLicenseAcceptance>false</requireLicenseAcceptance>
-        <!-- Optional elements -->
-        <!-- ... -->
-        </metadata>
-    <!-- Optional 'files' node -->
+        <!--<license type="file">LICENSE</license>-->
+        <projectUrl>https://github.com/FourPi/Xam.Plugin.Mixpanel.iOS</projectUrl>
+        <licenseUrl>https://github.com/FourPi/Xam.Plugin.Mixpanel.iOS/blob/master/LICENSE</licenseUrl>
+    </metadata>
+    <!--
+    <files>
+        <file src="..\LICENSE" target="" />
+    </files>
+    -->
 </package>
