@@ -57,4 +57,7 @@
     </NativeReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.ObjCBinding.CSharp.targets" />
+  <PropertyGroup>
+    <NuspecFile>Xam.Plugin.Mixpanel.iOS.nuspec</NuspecFile>
+  </PropertyGroup>
 </Project>

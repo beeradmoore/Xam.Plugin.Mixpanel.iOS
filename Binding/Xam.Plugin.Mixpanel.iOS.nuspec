@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+    <metadata>
+        <!-- Required elements-->
+        <id>Xam.Plugin.Mixpanel.iOS</id>
+        <version>1.0.0</version>
+        <description>Mixpanel bindings for Xamarin.iOS</description>
+        <authors>FourPi</authors>
+        <requireLicenseAcceptance>false</requireLicenseAcceptance>
+        <!-- Optional elements -->
+        <!-- ... -->
+        </metadata>
+    <!-- Optional 'files' node -->
+</package>
