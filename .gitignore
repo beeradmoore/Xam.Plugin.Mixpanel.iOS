@@ -4,3 +4,4 @@ bin/
 obj/
 Cartfile.resolved
 Binding/Mixpanel.framework
+Binding/NewBinding_*
