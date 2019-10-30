@@ -6,3 +6,4 @@ Cartfile.resolved
 Binding/Mixpanel.framework
 Binding/NewBinding_*
 *.nupkg
+Binding/Carthage
