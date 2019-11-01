@@ -6,13 +6,10 @@
         <description>Xamarin.iOS bindings for Mixpanel (Objective-C).</description>
         <authors>FourPi</authors>
         <requireLicenseAcceptance>false</requireLicenseAcceptance>
-        <!--<license type="file">LICENSE</license>-->
+        <license type="file">LICENSE</license>
         <projectUrl>https://github.com/FourPi/Xam.Plugin.Mixpanel.iOS</projectUrl>
-        <licenseUrl>https://github.com/FourPi/Xam.Plugin.Mixpanel.iOS/blob/master/LICENSE</licenseUrl>
     </metadata>
-    <!--
     <files>
-        <file src="..\LICENSE" target="" />
+        <file src="..\LICENSE" />
     </files>
-    -->
 </package>
