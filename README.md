@@ -1,6 +1,6 @@
 # Xam.Plugin.Mixpanel.iOS
 
-Xamarin.iOS bindings for Mixpanel iOS v3.5.1.
+Xamarin.iOS bindings for Mixpanel iOS v3.5.2.
 
 
 ## Installation
