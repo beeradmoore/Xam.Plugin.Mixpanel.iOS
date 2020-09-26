@@ -4,6 +4,7 @@
         <id>Xam.Plugin.Mixpanel.iOS</id>
         <version>3.6.0</version>
         <description>Xamarin.iOS bindings for Mixpanel (Objective-C).</description>
+        <tags>mixpanel, xamarin, xamarin.ios, ios</tags>
         <authors>beeradmoore</authors>
         <requireLicenseAcceptance>false</requireLicenseAcceptance>
         <license type="file">LICENSE</license>
