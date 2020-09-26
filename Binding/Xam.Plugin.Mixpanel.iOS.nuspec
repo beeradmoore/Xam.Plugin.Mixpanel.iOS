@@ -4,10 +4,10 @@
         <id>Xam.Plugin.Mixpanel.iOS</id>
         <version>3.6.0</version>
         <description>Xamarin.iOS bindings for Mixpanel (Objective-C).</description>
-        <authors>FourPi</authors>
+        <authors>beeradmoore</authors>
         <requireLicenseAcceptance>false</requireLicenseAcceptance>
         <license type="file">LICENSE</license>
-        <projectUrl>https://github.com/FourPi/Xam.Plugin.Mixpanel.iOS</projectUrl>
+        <projectUrl>https://github.com/beeradmoore/Xam.Plugin.Mixpanel.iOS</projectUrl>
     </metadata>
     <files>
         <file src="..\LICENSE" />
