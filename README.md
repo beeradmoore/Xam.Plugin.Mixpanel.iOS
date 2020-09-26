@@ -34,7 +34,7 @@ And then follow the docs provided at the Mixpanel Developer Documentation (https
     ``` sh
     $ ./BuildNugetPackage.sh
     ```
-2. Fetch your Xam.Plugin.Mixpanel.iOS.x.y.z.nupkg from the Binding directory.
+2. Fetch your Xam.Plugin.Mixpanel.iOS.x.y.z.nupkg and Xam.Plugin.Mixpanel.iOS.x.y.z.snupkg from the Binding directory.
 
 ## Updating Mixpanel SDK
 To update the Mixpanel SDK change the version within Binding/Cartfile to your desired SDK version and run the FetchFramework.sh script.
