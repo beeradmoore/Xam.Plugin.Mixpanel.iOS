@@ -8,3 +8,4 @@ Binding/NewBinding_*
 *.nupkg
 *.snupkg
 Binding/Carthage
+.DS_Store
