@@ -25,6 +25,7 @@ namespace ExampleProject
             mixpanel.EnableLogging = true;
             mixpanel.Track("This Event Happened");
 
+
             // This exists for Android but there does not seem to be a similar method call for iOS.
             /*
             stringBuilder.AppendLine("Device info:");
@@ -33,7 +34,10 @@ namespace ExampleProject
                 stringBuilder.AppendLine($" - {deviceInfo.Key}: {deviceInfo.Value}");
             }
             */
-
+            mixpanel.Add
+            mixpanel.AddGroup("test");
+            MixpanelGroup x = new MixpanelGroup();
+            
 
             MainTextView.Text = stringBuilder.ToString();
         }

@@ -1,7 +1,7 @@
 using System;
 using Foundation;
-//using Mixpanel;
 using ObjCRuntime;
+using UserNotifications;
 
 namespace Xam.Plugin.Mixpanel.iOS
 {
@@ -39,7 +39,7 @@ namespace Xam.Plugin.Mixpanel.iOS
 
         // -(void)unset:(NSArray * _Nonnull)properties;
         [Export("unset:")]
-        //[Verify (StronglyTypedNSArray)]
+        //[Verify(StronglyTypedNSArray)]
         void Unset(NSObject[] properties);
 
         // -(void)increment:(NSDictionary * _Nonnull)properties;
@@ -80,7 +80,16 @@ namespace Xam.Plugin.Mixpanel.iOS
     }
 
     // @protocol MixpanelType <NSObject>
-    [Protocol, Model]
+    /*
+  Check whether adding [Model] to this declaration is appropriate.
+  [Model] is used to generate a C# class that implements this protocol,
+  and might be useful for protocols that consumers are supposed to implement,
+  since consumers can subclass the generated class instead of implementing
+  the generated interface. If consumers are not supposed to implement this
+  protocol, then [Model] is redundant and will generate code that will never
+  be used.
+*/
+    [Protocol]
     [BaseType(typeof(NSObject))]
     interface IMixpanelType
     {
@@ -90,19 +99,34 @@ namespace Xam.Plugin.Mixpanel.iOS
         bool EqualToMixpanelType(IMixpanelType rhs);
     }
 
-    /*
-     
+    //https://docs.microsoft.com/en-us/xamarin/cross-platform/macios/binding/binding-types-reference 
     // @interface MixpanelTypeCategory (NSString) <MixpanelType>
     [Category]
     [BaseType(typeof(NSString))]
     interface NSString_MixpanelTypeCategory : IMixpanelType
     {
+
     }
 
-     @interface NSString (MixpanelTypeCategory) <MixpanelType>
 
-@end
+    /*
+     * 
+    @implementation NSString (MixpanelTypeCategory)
 
+    - (BOOL)equalToMixpanelType:(id<MixpanelType>)mixpanelType
+    {
+        return [mixpanelType isKindOfClass:[NSString class]] && [self isEqual:mixpanelType];
+    }
+
+    @end
+
+    @interface UIView (MyUIViewExtension)
+    -(void) makeBackgroundRed;
+    @end
+
+    */
+
+    /*
     // @interface MixpanelTypeCategory (NSNumber) <MixpanelType>
     [Category]
     [BaseType(typeof(NSNumber))]
@@ -140,7 +164,7 @@ namespace Xam.Plugin.Mixpanel.iOS
     */
 
     [Static]
-    //[Verify (ConstantsInterfaceAssociation)]
+    //[Verify(ConstantsInterfaceAssociation)]
     partial interface Constants
     {
         // extern NSString *const _Nonnull MPNotificationTypeMini;
@@ -268,7 +292,7 @@ namespace Xam.Plugin.Mixpanel.iOS
         // +(Mixpanel * _Nullable)sharedInstance;
         [Static]
         [NullAllowed, Export("sharedInstance")]
-        //[Verify (MethodToProperty)]
+        //[Verify(MethodToProperty)]
         Mixpanel SharedInstance { get; }
 
         // -(instancetype _Nonnull)initWithToken:(NSString * _Nonnull)apiToken launchOptions:(NSDictionary * _Nullable)launchOptions flushInterval:(NSUInteger)flushInterval trackCrashes:(BOOL)trackCrashes;
@@ -349,7 +373,7 @@ namespace Xam.Plugin.Mixpanel.iOS
 
         // -(NSDictionary * _Nonnull)currentSuperProperties;
         [Export("currentSuperProperties")]
-        //[Verify (MethodToProperty)]
+        //[Verify(MethodToProperty)]
         NSDictionary CurrentSuperProperties { get; }
 
         // -(void)timeEvent:(NSString * _Nonnull)event;
@@ -390,7 +414,7 @@ namespace Xam.Plugin.Mixpanel.iOS
 
         // -(NSString * _Nonnull)libVersion;
         [Export("libVersion")]
-        //[Verify (MethodToProperty)]
+        //[Verify(MethodToProperty)]
         string LibVersion { get; }
 
         // -(void)optOutTracking;
@@ -411,14 +435,35 @@ namespace Xam.Plugin.Mixpanel.iOS
 
         // -(BOOL)hasOptedOutTracking;
         [Export("hasOptedOutTracking")]
-        //[Verify (MethodToProperty)]
+        //[Verify(MethodToProperty)]
         bool HasOptedOutTracking { get; }
 
         // +(NSString * _Nonnull)libVersion;
         [Static]
         [Export("libVersion")]
-        //[Verify (MethodToProperty)]
+        //[Verify(MethodToProperty)]
         string LibVersionStatic { get; }
+
+        // +(BOOL)isMixpanelPushNotification:(UNNotificationContent * _Nonnull)notification __attribute__((availability(ios, introduced=10.0))) __attribute__((availability(macos, introduced=10.14))) __attribute__((availability(watchos, introduced=6.0))) __attribute__((availability(tvos, unavailable)));
+        [Watch(6, 0), NoTV, Mac(10, 14), iOS(10, 0)]
+        [Static]
+        [Export("isMixpanelPushNotification:")]
+        bool IsMixpanelPushNotification(UNNotificationContent notification);
+
+        // +(void)userNotificationCenter:(UNUserNotificationCenter * _Nonnull)center didReceiveNotificationResponse:(UNNotificationResponse * _Nonnull)response withCompletionHandler:(void (^ _Nonnull)(void))completionHandler __attribute__((availability(ios, introduced=10.0))) __attribute__((availability(macos, introduced=10.14))) __attribute__((availability(watchos, introduced=6.0))) __attribute__((availability(tvos, unavailable)));
+        [Watch(6, 0), NoTV, Mac(10, 14), iOS(10, 0)]
+        [Static]
+        [Export("userNotificationCenter:didReceiveNotificationResponse:withCompletionHandler:")]
+        void UserNotificationCenter(UNUserNotificationCenter center, UNNotificationResponse response, Action completionHandler);
+
+        // +(void)trackPushNotificationEventFromRequest:(UNNotificationRequest * _Nonnull)request event:(NSString * _Nonnull)event properties:(NSDictionary * _Nonnull)additionalProperties;
+        [Static]
+        [Export("trackPushNotificationEventFromRequest:event:properties:")]
+        void TrackPushNotificationEventFromRequest(UNNotificationRequest request, string @event, NSDictionary additionalProperties);
+
+        // -(void)trackPushNotification:(NSDictionary * _Nonnull)userInfo event:(NSString * _Nonnull)event properties:(NSDictionary * _Nonnull)additionalProperties;
+        [Export("trackPushNotification:event:properties:")]
+        void TrackPushNotification(NSDictionary userInfo, string @event, NSDictionary additionalProperties);
 
         // -(void)showNotificationWithID:(NSUInteger)ID;
         [Export("showNotificationWithID:")]
@@ -440,8 +485,8 @@ namespace Xam.Plugin.Mixpanel.iOS
         [Export("joinExperimentsWithCallback:")]
         void JoinExperimentsWithCallback([NullAllowed] Action experimentsLoadedCallback);
 
-        // @property (copy, atomic) NSString * _Nullable nameTag __attribute__((deprecated("")));
-        [NullAllowed, Export("nameTag")]
+        // @property (copy, atomic) __deprecated NSString * nameTag __attribute__((deprecated("")));
+        [Export("nameTag")]
         string NameTag { get; set; }
     }
 
@@ -535,7 +580,7 @@ namespace Xam.Plugin.Mixpanel.iOS
   protocol, then [Model] is redundant and will generate code that will never
   be used.
 */
-    [Protocol, Model]
+    [Protocol]
     [BaseType(typeof(NSObject))]
     interface MPTweakObserver
     {
@@ -572,7 +617,7 @@ namespace Xam.Plugin.Mixpanel.iOS
 
         // @property (readonly, copy, nonatomic) NSArray * tweaks;
         [Export("tweaks", ArgumentSemantic.Copy)]
-        //[Verify (StronglyTypedNSArray)]
+        //[Verify(StronglyTypedNSArray)]
         NSObject[] Tweaks { get; }
 
         // -(MPTweak *)tweakWithName:(NSString *)name;
@@ -590,5 +635,15 @@ namespace Xam.Plugin.Mixpanel.iOS
         // -(void)reset;
         [Export("reset")]
         void Reset();
+    }
+
+    // @interface MPNotificationServiceExtension : UNNotificationServiceExtension
+    [Watch(6, 0), NoTV, Mac(10, 14), iOS(10, 0)]
+    [BaseType(typeof(UNNotificationServiceExtension))]
+    interface MPNotificationServiceExtension
+    {
+        // -(void)didReceiveNotificationRequest:(UNNotificationRequest * _Nonnull)request withContentHandler:(void (^ _Nonnull)(UNNotificationContent * _Nonnull))contentHandler;
+        [Export("didReceiveNotificationRequest:withContentHandler:")]
+        void DidReceiveNotificationRequest(UNNotificationRequest request, Action<UNNotificationContent> contentHandler);
     }
 }

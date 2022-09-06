@@ -68,10 +68,7 @@
         <Reference Include="System.Numerics.Vectors" />
     </ItemGroup>
     <ItemGroup>
-      <PackageReference Include="Xamarin.Essentials" Version="1.7.0" />
-      <PackageReference Include="Xam.Plugin.Mixpanel.iOS">
-        <Version>3.6.3</Version>
-      </PackageReference>
+      <PackageReference Include="Xamarin.Essentials" Version="1.7.3" />
     </ItemGroup>
     <ItemGroup>
         <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Contents.json">
@@ -136,6 +133,12 @@
         <Compile Include="ViewController.designer.cs">
             <DependentUpon>ViewController.cs</DependentUpon>
         </Compile>
+    </ItemGroup>
+    <ItemGroup>
+      <ProjectReference Include="..\Binding\Xam.Plugin.Mixpanel.iOS.csproj">
+        <Project>{6844CE3A-8CF5-455A-9FAD-FE0630712328}</Project>
+        <Name>Xam.Plugin.Mixpanel.iOS</Name>
+      </ProjectReference>
     </ItemGroup>
     <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
 </Project>

@@ -1,20 +1,11 @@
 #!/bin/sh
 
+set -euo pipefail
+
+rm -rf Mixpanel.xcframework
+
+# Currently only building for iOS. tvOS, macOS and watchOS are not supported with this nuget.
 carthage update --use-xcframeworks --platform ios
 
-# If carthage failed.
-if [ $? -ne 0 ]
-then
-   exit 1
-fi
-
 cp -r Carthage/Build/Mixpanel.xcframework .
-
-# If we couldn't copy the Mixpanel.xcframework.
-if [ $? -ne 0 ]
-then
-   exit 1
-fi
-
 rm -rf Carthage
-

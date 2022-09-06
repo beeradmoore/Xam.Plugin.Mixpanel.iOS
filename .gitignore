@@ -3,7 +3,7 @@
 bin/
 obj/
 Cartfile.resolved
-Binding/Mixpanel.framework
+Binding/Mixpanel.xcframework
 Binding/NewBinding_*
 *.nupkg
 *.snupkg

@@ -5,6 +5,8 @@ VisualStudioVersion = 16.0.810.16
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExampleProject", "ExampleProject.csproj", "{788013CA-2CCC-4C72-BF84-CC67D83E6A5E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Xam.Plugin.Mixpanel.iOS", "..\Binding\Xam.Plugin.Mixpanel.iOS.csproj", "{6844CE3A-8CF5-455A-9FAD-FE0630712328}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|iPhoneSimulator = Debug|iPhoneSimulator
@@ -21,6 +23,14 @@ Global
 		{788013CA-2CCC-4C72-BF84-CC67D83E6A5E}.Debug|iPhone.Build.0 = Debug|iPhone
 		{788013CA-2CCC-4C72-BF84-CC67D83E6A5E}.Release|iPhone.ActiveCfg = Release|iPhone
 		{788013CA-2CCC-4C72-BF84-CC67D83E6A5E}.Release|iPhone.Build.0 = Release|iPhone
+		{6844CE3A-8CF5-455A-9FAD-FE0630712328}.Debug|iPhoneSimulator.ActiveCfg = Debug|Any CPU
+		{6844CE3A-8CF5-455A-9FAD-FE0630712328}.Debug|iPhoneSimulator.Build.0 = Debug|Any CPU
+		{6844CE3A-8CF5-455A-9FAD-FE0630712328}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
+		{6844CE3A-8CF5-455A-9FAD-FE0630712328}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
+		{6844CE3A-8CF5-455A-9FAD-FE0630712328}.Debug|iPhone.ActiveCfg = Debug|Any CPU
+		{6844CE3A-8CF5-455A-9FAD-FE0630712328}.Debug|iPhone.Build.0 = Debug|Any CPU
+		{6844CE3A-8CF5-455A-9FAD-FE0630712328}.Release|iPhone.ActiveCfg = Release|Any CPU
+		{6844CE3A-8CF5-455A-9FAD-FE0630712328}.Release|iPhone.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
