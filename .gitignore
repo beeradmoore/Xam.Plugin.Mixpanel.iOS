@@ -1,9 +1,10 @@
-.mfractor
 .vs/
+.vscode/
+.idea/
 bin/
 obj/
 Cartfile.resolved
-Binding/Mixpanel.framework
+Mixpanel.xcframework/
 Binding/NewBinding_*
 *.nupkg
 *.snupkg

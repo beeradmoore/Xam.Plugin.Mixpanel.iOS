@@ -1,0 +1,43 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net9.0-ios</TargetFramework>
+    <RuntimeIdentifiers>ios-arm64;iossimulator-arm64;iossimulator-x64</RuntimeIdentifiers>
+
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>true</ImplicitUsings>
+    <IsBindingProject>true</IsBindingProject>
+
+    <!--
+      Enable trim analyzers for class libraries.
+      To learn more, see: https://learn.microsoft.com/dotnet/core/deploying/trimming/prepare-libraries-for-trimming
+    -->
+    <IsTrimmable>true</IsTrimmable>
+
+    <!-- Nuget package -->
+    <PackageId>Xam.Plugin.Mixpanel.iOS</PackageId>
+    <Version>5.0.2</Version>
+    <Description>Xamarin.iOS bindings for Mixpanel (Objective-C).</Description>
+    <PackageTags>mixpanel, xamarin, xamarin.ios, ios</PackageTags>
+    <Authors>beeradmoore</Authors>
+    <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+    <PackageLicenseFile>LICENSE</PackageLicenseFile>
+    <PackageProjectUrl>https://github.com/beeradmoore/Xam.Plugin.Mixpanel.iOS</PackageProjectUrl>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <NativeReference Include="Mixpanel.xcframework">
+      <Kind>Framework</Kind>
+      <Frameworks>UIKit, Foundation, SystemConfiguration, CoreTelephony, Accelerate, CoreGraphics, QuartzCore, StoreKit</Frameworks>
+    </NativeReference>
+  </ItemGroup>
+  
+  <ItemGroup>
+    <ObjcBindingApiDefinition Include="ApiDefinition.cs" />
+    <ObjcBindingCoreSource Include="StructsAndEnums.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\LICENSE" Pack="true" PackagePath="">
+      <Link>LICENSE</Link>
+    </None>
+  </ItemGroup>
+</Project>
