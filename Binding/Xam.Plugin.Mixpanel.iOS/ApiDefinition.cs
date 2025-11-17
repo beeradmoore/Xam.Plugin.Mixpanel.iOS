@@ -238,9 +238,9 @@ namespace Xam.Plugin.Mixpanel.iOS
 		NSObject WeakDelegate { get; set; }
 
 		// +(Mixpanel * _Nonnull)sharedInstanceWithToken:(NSString * _Nonnull)apiToken trackAutomaticEvents:(BOOL)trackAutomaticEvents;
-		//[Static]
-		//[Export ("sharedInstanceWithToken:trackAutomaticEvents:")]
-		//Mixpanel SharedInstanceWithToken (string apiToken, bool trackAutomaticEvents);
+		[Static]
+		[Export ("sharedInstanceWithToken:trackAutomaticEvents:")]
+		Mixpanel SharedInstanceWithToken (string apiToken, bool trackAutomaticEvents);
 
 		// +(Mixpanel * _Nonnull)sharedInstanceWithToken:(NSString * _Nonnull)apiToken trackAutomaticEvents:(BOOL)trackAutomaticEvents optOutTrackingByDefault:(BOOL)optOutTrackingByDefault;
 		//[Static]
@@ -411,7 +411,7 @@ namespace Xam.Plugin.Mixpanel.iOS
 		[Static]
 		[Export ("libVersion")]
 		//[Verify (MethodToProperty)]
-		string LibStaticVersion { get; }
+		string LibVersionStatic { get; }
 	}
 
 	// @protocol MixpanelDelegate <NSObject>

@@ -10,3 +10,4 @@ Binding/NewBinding_*
 *.snupkg
 Binding/Carthage
 .DS_Store
+*.user
