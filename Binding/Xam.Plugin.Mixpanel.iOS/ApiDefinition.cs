@@ -87,46 +87,46 @@ namespace Xam.Plugin.Mixpanel.iOS
 	}
 
 	// @interface MixpanelTypeCategory (NSString) <MixpanelType>
-	[Category]
-	[BaseType (typeof(NSString))]
-	interface NSString_MixpanelTypeCategory : IMixpanelType
-	{
-	}
+	//[Category]
+	//[BaseType (typeof(NSString))]
+	//interface NSString_MixpanelTypeCategory : IMixpanelType
+	//{
+	//}
 
 	// @interface MixpanelTypeCategory (NSNumber) <MixpanelType>
-	[Category]
-	[BaseType (typeof(NSNumber))]
-	interface NSNumber_MixpanelTypeCategory : IMixpanelType
-	{
-	}
+	//[Category]
+	//[BaseType (typeof(NSNumber))]
+	//interface NSNumber_MixpanelTypeCategory : IMixpanelType
+	//{
+	//}
 
 	// @interface MixpanelTypeCategory (NSArray) <MixpanelType>
-	[Category]
-	[BaseType (typeof(NSArray))]
-	interface NSArray_MixpanelTypeCategory : IMixpanelType
-	{
-	}
+	//[Category]
+	//[BaseType (typeof(NSArray))]
+	//interface NSArray_MixpanelTypeCategory : IMixpanelType
+	//{
+	//}
 
 	// @interface MixpanelTypeCategory (NSDictionary) <MixpanelType>
-	[Category]
-	[BaseType (typeof(NSDictionary))]
-	interface NSDictionary_MixpanelTypeCategory : IMixpanelType
-	{
-	}
+	//[Category]
+	//[BaseType (typeof(NSDictionary))]
+	//interface NSDictionary_MixpanelTypeCategory : IMixpanelType
+	//{
+	//}
 
 	// @interface MixpanelTypeCategory (NSDate) <MixpanelType>
-	[Category]
-	[BaseType (typeof(NSDate))]
-	interface NSDate_MixpanelTypeCategory : IMixpanelType
-	{
-	}
+	//[Category]
+	//[BaseType (typeof(NSDate))]
+	//interface NSDate_MixpanelTypeCategory : IMixpanelType
+	//{
+	//}
 
 	// @interface MixpanelTypeCategory (NSURL) <MixpanelType>
-	[Category]
-	[BaseType (typeof(NSUrl))]
-	interface NSURL_MixpanelTypeCategory : IMixpanelType
-	{
-	}
+	//[Category]
+	//[BaseType (typeof(NSUrl))]
+	//interface NSURL_MixpanelTypeCategory : IMixpanelType
+	//{
+	//}
 
 	// @interface MixpanelGroup : NSObject
 	[BaseType (typeof(NSObject))]
