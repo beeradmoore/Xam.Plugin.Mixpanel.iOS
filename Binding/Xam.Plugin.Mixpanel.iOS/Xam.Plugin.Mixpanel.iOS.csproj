@@ -13,6 +13,9 @@
     -->
     <IsTrimmable>true</IsTrimmable>
 
+    <IncludeSymbols>true</IncludeSymbols>
+    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+    
     <!-- Nuget package -->
     <PackageId>Xam.Plugin.Mixpanel.iOS</PackageId>
     <Version>5.0.2</Version>
