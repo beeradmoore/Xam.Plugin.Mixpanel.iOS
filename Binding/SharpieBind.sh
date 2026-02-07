@@ -6,7 +6,7 @@ sharpie bind \
     -namespace Xam.Plugin.Mixpanel.iOS \
     -prefix NewBinding_ \
     -sdk iphoneos18.2 \
-    -framework ./Mixpanel.xcframework/ios-arm64/Mixpanel.framework
+    -framework ./Xam.Plugin.Mixpanel.iOS/Mixpanel.xcframework/ios-arm64/Mixpanel.framework
 
 
     #harpie bind \
