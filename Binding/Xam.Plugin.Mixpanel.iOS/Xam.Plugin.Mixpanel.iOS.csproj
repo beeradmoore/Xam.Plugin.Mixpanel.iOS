@@ -1,6 +1,6 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <TargetFramework>net9.0-ios</TargetFramework>
+    <TargetFrameworks>net9.0-ios;net10.0-ios</TargetFrameworks>
     <RuntimeIdentifiers>ios-arm64;iossimulator-arm64;iossimulator-x64</RuntimeIdentifiers>
 
     <Nullable>enable</Nullable>
@@ -18,13 +18,14 @@
     
     <!-- Nuget package -->
     <PackageId>Xam.Plugin.Mixpanel.iOS</PackageId>
-    <Version>5.0.2</Version>
+    <Version>5.0.9</Version>
     <Description>Xamarin.iOS bindings for Mixpanel (Objective-C).</Description>
     <PackageTags>mixpanel, xamarin, xamarin.ios, ios</PackageTags>
     <Authors>beeradmoore</Authors>
     <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
     <PackageProjectUrl>https://github.com/beeradmoore/Xam.Plugin.Mixpanel.iOS</PackageProjectUrl>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
   </PropertyGroup>
 
   <ItemGroup>
@@ -39,8 +40,9 @@
     <ObjcBindingCoreSource Include="StructsAndEnums.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="..\..\LICENSE" Pack="true" PackagePath="">
+    <None Include="..\..\LICENSE" Pack="true" PackagePath="\">
       <Link>LICENSE</Link>
     </None>
+    <None Include="..\..\README.md" Pack="true" PackagePath="\" />
   </ItemGroup>
 </Project>
