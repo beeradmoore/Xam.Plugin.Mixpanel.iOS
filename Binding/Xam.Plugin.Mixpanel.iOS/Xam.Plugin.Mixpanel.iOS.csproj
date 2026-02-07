@@ -45,4 +45,11 @@
     </None>
     <None Include="..\..\README.md" Pack="true" PackagePath="\" />
   </ItemGroup>
+  <PropertyGroup>
+    <!--
+    Hides warning like 
+    /usr/local/share/dotnet/sdk/10.0.102/NuGet.Build.Tasks.Pack.targets(222,5): warning NU5123: The file 'lib/net9.0-ios18.0/Xam.Plugin.Mixpanel.iOS.resources/Mixpanel.xcframework/ios-arm64_x86_64-simulator/dSYMs/Mixpanel.framework.dSYM/Contents/Resources/Relocations/aarch64/Mixpanel.yml' path, name, or both are too long. Your package might not work without long file path support. Please shorten the file path or file name.
+    -->
+    <NoWarn>$(NoWarn);NU5123</NoWarn>
+  </PropertyGroup>
 </Project>
