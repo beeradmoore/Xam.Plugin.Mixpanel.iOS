@@ -1,20 +1,9 @@
 #!/bin/sh
 
-carthage update
+set -e
 
-# If carthage failed.
-if [ $? -ne 0 ]
-then
-   exit 1
-fi
+carthage update --use-xcframeworks
 
-cp -r Carthage/Build/iOS/Mixpanel.framework .
+cp -r Carthage/Build/Mixpanel.xcframework Xam.Plugin.Mixpanel.iOS/
 
-# If we couldn't copy the Mixpanel.framework.
-if [ $? -ne 0 ]
-then
-   exit 1
-fi
-
-rm -rf Carthage
-
+#rm -rf Carthage

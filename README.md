@@ -1,6 +1,6 @@
 # Xam.Plugin.Mixpanel.iOS
 
-Xamarin.iOS bindings for Mixpanel iOS v3.6.2.
+Xamarin.iOS bindings for Mixpanel iOS v5.0.8.
 
 
 ## Installation
@@ -13,6 +13,7 @@ Xam.Plugin.Mixpanel.iOS is available via NuGet.
 ## Usage
 
 Include Mixpanel
+
 ``` c#
 using Xam.Plugin.Mixpanel.iOS;
 ```
@@ -43,8 +44,7 @@ If there are API changes you will want to run SharpieBind.sh instead and examine
 *NOTE: The NewBinding_ files are not build ready and need to be modified manually.*
 
 ## Requirements
-- [Xcode 13.0](https://developer.apple.com/download/more/)
-- [Visual Studio for Mac](https://visualstudio.microsoft.com/vs/mac/)
+- [Xcode 16.2](https://developer.apple.com/download/more/)
 - [Carthage](https://github.com/Carthage/Carthage)
 - [Objective Sharpie](https://docs.microsoft.com/en-us/xamarin/cross-platform/macios/binding/objective-sharpie/get-started)
 
