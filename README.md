@@ -44,10 +44,15 @@ If there are API changes you will want to also run `SharpieBind.sh` and examine 
 *NOTE: The `NewBinding_` files are not build ready and need to be modified manually.*
 
 ## Requirements
-- [Xcode 26.2](https://developer.apple.com/download/more/)
+- To generate new bindings - [Xcode 16.2](https://developer.apple.com/download/more/) (why Xcode 16.2? See below)
+- To compile the project - [Xcode 26.2](https://developer.apple.com/download/more/) 
 - [Carthage](https://github.com/Carthage/Carthage)
 - [Objective Sharpie](https://docs.microsoft.com/en-us/xamarin/cross-platform/macios/binding/objective-sharpie/get-started)
 
+## Why Xcode 16.2?
+Objective Sharpie has fallen a little behind in its updates and as such it is not compatible with modern versions of Xcode. Essentially in order to create new bindings you need to have the iPhone 18.2 SDK, and this comes with Xcode 16.2. Attempting to create bindings in any newer versions will generate errors. 
+
+After the bindings are made you can use the latest Xcode (26.2 at the time of writing) to be compile the nuget packages. You can see [this thread](https://github.com/dotnet/macios/issues/22622) for more information. It may also be useful to [watch this thread](https://github.com/dotnet/macios/issues/23964) to get information about Objective Sharpie updates.
 
 ## TODO
 * Verify the `Verify` statements work as expected.
