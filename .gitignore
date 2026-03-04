@@ -5,7 +5,7 @@ bin/
 obj/
 Cartfile.resolved
 Mixpanel.xcframework/
-Binding/NewBinding_*
+Binding/NewBinding/*
 *.nupkg
 *.snupkg
 Binding/Carthage

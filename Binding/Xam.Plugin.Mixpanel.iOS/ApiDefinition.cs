@@ -3,12 +3,10 @@ using Foundation;
 //using Mixpanel;
 using ObjCRuntime;
 
-namespace Xam.Plugin.Mixpanel.iOS
-{
+namespace Xam.Plugin.Mixpanel.iOS {
 	// @interface MixpanelPeople : NSObject
-	[BaseType (typeof(NSObject))]
-	interface MixpanelPeople
-	{
+	[BaseType (typeof (NSObject))]
+	interface MixpanelPeople {
 		// @property (atomic) BOOL ignoreTime;
 		[Export ("ignoreTime")]
 		bool IgnoreTime { get; set; }
@@ -28,7 +26,7 @@ namespace Xam.Plugin.Mixpanel.iOS
 		// -(void)unset:(NSArray * _Nonnull)properties;
 		[Export ("unset:")]
 		//[Verify (StronglyTypedNSArray)]
-		void Unset (NSObject[] properties);
+		void Unset (NSObject [] properties);
 
 		// -(void)increment:(NSDictionary * _Nonnull)properties;
 		[Export ("increment:")]
@@ -76,10 +74,10 @@ namespace Xam.Plugin.Mixpanel.iOS
   the generated interface. If consumers are not supposed to implement this
   protocol, then [Model] is redundant and will generate code that will never
   be used.
-*/[Protocol]
-	[BaseType (typeof(NSObject))]
-	interface MixpanelType
-	{
+*/
+	[Protocol]
+	[BaseType (typeof (NSObject))]
+	interface MixpanelType {
 		// @required -(BOOL)equalToMixpanelType:(id<MixpanelType>)rhs;
 		[Abstract]
 		[Export ("equalToMixpanelType:")]
@@ -88,50 +86,43 @@ namespace Xam.Plugin.Mixpanel.iOS
 
 	// @interface MixpanelTypeCategory (NSString) <MixpanelType>
 	//[Category]
-	//[BaseType (typeof(NSString))]
-	//interface NSString_MixpanelTypeCategory : IMixpanelType
-	//{
+	//[BaseType (typeof (NSString))]
+	//interface NSString_MixpanelTypeCategory : IMixpanelType {
 	//}
 
 	// @interface MixpanelTypeCategory (NSNumber) <MixpanelType>
 	//[Category]
-	//[BaseType (typeof(NSNumber))]
-	//interface NSNumber_MixpanelTypeCategory : IMixpanelType
-	//{
+	//[BaseType (typeof (NSNumber))]
+	//interface NSNumber_MixpanelTypeCategory : IMixpanelType {
 	//}
 
 	// @interface MixpanelTypeCategory (NSArray) <MixpanelType>
 	//[Category]
-	//[BaseType (typeof(NSArray))]
-	//interface NSArray_MixpanelTypeCategory : IMixpanelType
-	//{
+	//[BaseType (typeof (NSArray))]
+	//interface NSArray_MixpanelTypeCategory : IMixpanelType {
 	//}
 
 	// @interface MixpanelTypeCategory (NSDictionary) <MixpanelType>
 	//[Category]
-	//[BaseType (typeof(NSDictionary))]
-	//interface NSDictionary_MixpanelTypeCategory : IMixpanelType
-	//{
+	//[BaseType (typeof (NSDictionary))]
+	//interface NSDictionary_MixpanelTypeCategory : IMixpanelType {
 	//}
 
 	// @interface MixpanelTypeCategory (NSDate) <MixpanelType>
 	//[Category]
-	//[BaseType (typeof(NSDate))]
-	//interface NSDate_MixpanelTypeCategory : IMixpanelType
-	//{
+	//[BaseType (typeof (NSDate))]
+	//interface NSDate_MixpanelTypeCategory : IMixpanelType {
 	//}
 
 	// @interface MixpanelTypeCategory (NSURL) <MixpanelType>
 	//[Category]
-	//[BaseType (typeof(NSUrl))]
-	//interface NSURL_MixpanelTypeCategory : IMixpanelType
-	//{
+	//[BaseType (typeof (NSUrl))]
+	//interface NSURL_MixpanelTypeCategory : IMixpanelType {
 	//}
 
 	// @interface MixpanelGroup : NSObject
-	[BaseType (typeof(NSObject))]
-	interface MixpanelGroup
-	{
+	[BaseType (typeof (NSObject))]
+	interface MixpanelGroup {
 		// -(void)set:(NSDictionary * _Nonnull)properties;
 		[Export ("set:")]
 		void Set (NSDictionary properties);
@@ -146,7 +137,7 @@ namespace Xam.Plugin.Mixpanel.iOS
 
 		// -(void)union:(NSString * _Nonnull)property values:(NSArray<id<MixpanelType>> * _Nonnull)values;
 		[Export ("union:values:")]
-		void Union (string property, MixpanelType[] values);
+		void Union (string property, MixpanelType [] values);
 
 		// -(void)deleteGroup;
 		[Export ("deleteGroup")]
@@ -158,9 +149,8 @@ namespace Xam.Plugin.Mixpanel.iOS
 	}
 
 	// @interface Mixpanel : NSObject
-	[BaseType (typeof(NSObject))]
-	interface Mixpanel
-	{
+	[BaseType (typeof (NSObject))]
+	interface Mixpanel {
 		// @property (readonly, atomic, strong) MixpanelPersistence * _Nonnull persistence;
 		//[Export ("persistence", ArgumentSemantic.Strong)]
 		//MixpanelPersistence Persistence { get; }
@@ -294,7 +284,7 @@ namespace Xam.Plugin.Mixpanel.iOS
 
 		// -(void)setGroup:(NSString * _Nonnull)groupKey groupIDs:(NSArray<id<MixpanelType>> * _Nonnull)groupIDs;
 		[Export ("setGroup:groupIDs:")]
-		void SetGroup (string groupKey, MixpanelType[] groupIDs);
+		void SetGroup (string groupKey, MixpanelType [] groupIDs);
 
 		// -(void)setGroup:(NSString * _Nonnull)groupKey groupID:(id<MixpanelType> _Nonnull)groupID;
 		[Export ("setGroup:groupID:")]
@@ -416,9 +406,8 @@ namespace Xam.Plugin.Mixpanel.iOS
 
 	// @protocol MixpanelDelegate <NSObject>
 	[Protocol, Model]
-	[BaseType (typeof(NSObject))]
-	interface MixpanelDelegate
-	{
+	[BaseType (typeof (NSObject))]
+	interface MixpanelDelegate {
 		// @optional -(BOOL)mixpanelWillFlush:(Mixpanel * _Nonnull)mixpanel;
 		[Export ("mixpanelWillFlush:")]
 		bool MixpanelWillFlush (Mixpanel mixpanel);
